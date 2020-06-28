@@ -27,11 +27,11 @@ public class DBConfiguration {
 	@Value("${db_url}")
 	private String url;
 	
-	@Value("${db_username}")
-	private String username;
-
-	@Value("${db_password}")
-	private String password;
+//	@Value("${db_username}")
+//	private String username;
+//
+//	@Value("${db_password}")
+//	private String password;
 	
 	@Value("${db_driver}")
 	private String driverClassName;
@@ -45,37 +45,37 @@ public class DBConfiguration {
 	
 	
 	
-	@Profile("prod")
+	@Profile("dev")
 	@Bean
 	public DataSource prodDataSource() {
 		DataSourceBuilder builder = DataSourceBuilder.create();
 	    logger.info("----------------------------------------");
 	    logger.info("Configuration properties");
-	    logger.info("   mysql.username is {}", vaultConfiguration.getUsername());
-	    logger.info("   mysql.password is {}", vaultConfiguration.getPassword());
+	    logger.info("   tradingapp.username is {}", vaultConfiguration.getUsername());
+	    logger.info("   tradingapp.password is {}", vaultConfiguration.getPassword());
 	    logger.info("----------------------------------------");
 	    
 		builder.url(url);
 		
 		
-//		builder.username(vaultConfiguration.getUsername());
+		builder.username(vaultConfiguration.getUsername());
 //
 //		System.out.println(vaultConfiguration.getUsername()+" "+vaultConfiguration.getPassword());
 //		
 //		
-//		builder.password(vaultConfiguration.getPassword());
+		builder.password(vaultConfiguration.getPassword());
 		
 		
-		builder.username(username);
+//		builder.username(username);
 		
 		
-		builder.password(password);
+//		builder.password(password);
 		
 		builder.driverClassName(driverClassName);
 		
 		
 		
-		System.out.println("Production...");
+		System.out.println("Development...");
 		
 		return builder.build();
 		

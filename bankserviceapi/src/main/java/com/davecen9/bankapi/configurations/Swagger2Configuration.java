@@ -23,8 +23,8 @@ public class Swagger2Configuration {
 	
 	  public static final Contact DEFAULT_CONTACT = new Contact("dave", "davecen9", "davecen9@gmail.com");
 	  public static final ApiInfo DEFAULT_API_INFO = new ApiInfo(
-			  "Awesome API Title", 
-			  "Awesome API Description", 
+			  "Bank Service API Title", 
+			  "Bank Service API Description", 
 			  "1.0", 
 			  "urn:tos",
 	          DEFAULT_CONTACT, 

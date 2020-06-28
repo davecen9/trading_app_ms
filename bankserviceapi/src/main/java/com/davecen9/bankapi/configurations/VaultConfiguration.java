@@ -2,7 +2,7 @@ package com.davecen9.bankapi.configurations;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
-@ConfigurationProperties("mysql")
+@ConfigurationProperties("tradingapp-config")
 public class VaultConfiguration {
 
 	private String username;
